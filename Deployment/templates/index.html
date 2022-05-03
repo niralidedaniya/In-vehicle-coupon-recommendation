@@ -1,0 +1,237 @@
+<html>
+ <head>
+  <title>In-Vehicle Coupon Recommendation</title>
+  <style>
+      body {
+        background-color: #EEF2FA;
+        font-family: Verdana;
+      }
+      div {
+        margin-bottom: 10px;
+      }
+      label {
+        display: inline-block;
+        width: 190px;
+      }
+      select {
+        width: 13%
+        
+      }
+      input{
+      margin-left: 196px;
+      margin-top: 5px;
+}
+   </style>
+ </head>
+<body>
+    <h3>In-Vehicle Coupon Recommendation</h3>
+    <h4> Fill the below details for prediction </h4>
+							
+<div>
+  <form action="/predict" method="POST">
+    <label for="destination">destination</label>
+    <select name="destination" id="destination">
+      <option value="Work" selected>Work</option>
+      <option value="Home">Home</option>
+      <option value="No Urgent Place">No Urgent Place</option>
+    </select>
+    <br>
+    <label for="passanger">passanger</label>
+    <select name="passanger" id="passanger">
+      <option value="Alone">Alone</option>
+      <option value="Friend(s)">Friend(s)</option>
+      <option value="Partner">Partner</option>
+      <option value="Kid(s)">Kid(s)</option>
+    </select>
+    <br>
+    <label for="weather">weather</label>
+    <select name="weather" id="weather">
+      <option value="Sunny">Sunny</option>
+      <option value="Snowy">Snowy</option>
+      <option value="Rainy">Rainy</option>
+    </select>
+    <br>
+    <label for="temperature">temperature</label>
+    <select name="temperature" id="temperature">
+      <option value=30>30</option>
+      <option value=55>55</option>
+      <option value=80 selected>80</option>
+    </select>
+    <br>
+    <label for="time">time</label>
+    <select name="time" id="time">
+      <option value="7AM">7AM</option>
+      <option value="10AM">10AM</option>
+      <option value="2PM">2PM</option>
+      <option value="6PM">6PM</option>
+      <option value="10PM">10PM</option>
+    </select>
+    <br>
+    <label for="coupon">coupon</label>
+    <select name="coupon" id="coupon">
+      <option value="Carry out & Take away">Carry out & Take away</option>
+      <option value="Restaurant(<20)">Restaurant(<20)</option>
+      <option value="Coffee House">Coffee House</option>
+      <option value="Restaurant(20-50)">Restaurant(20-50)</option>
+      <option value="Bar">Bar</option>
+    </select>
+    <br>
+    <label for="expiration">expiration</label>
+    <select name="expiration" id="expiration">
+      <option value="2h">2h</option>
+      <option value="1d">1d</option>
+    </select>
+    <br>
+    <label for="gender">gender</label>
+    <select name="gender" id="gender">
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+    <br>
+    <label for="age">age</label>
+    <select name="age" id="age">
+      <option value="below21">below21</option>
+      <option value="21">21</option>
+      <option value="26">26</option>
+      <option value="31">31</option>
+      <option value="36">36</option>
+      <option value="41">41</option>
+      <option value="46">46</option>
+      <option value="50plus">50plus</option>
+    </select>
+    <br>
+    <label for="maritalStatus">maritalStatus</label>
+    <select name="maritalStatus" id="maritalStatus">
+      <option value="Single">Single</option>
+      <option value="Unmarried partner">Unmarried partner</option>
+      <option value="Married partner">Married partner</option>
+      <option value="Divorced">Divorced</option>
+      <option value="Widowed">Widowed</option>
+    </select>
+    <br>
+    <label for="has_children">has_children</label>
+    <select name="has_children" id="has_children">
+      <option value=0>0</option>
+      <option value=1>1</option>
+    </select>
+    <br>
+    <label for="education">education</label>
+    <select name="education" id="education">
+      <option value="Some High School">Some High School</option>
+      <option value="High School Graduate">High School Graduate</option>
+      <option value="Some college - no degree">Some college - no degree</option>
+      <option value="Associates degree">Associates degree</option>
+      <option value="Bachelors degree">Bachelors degree</option>
+      <option value="Graduate degree (Masters or Doctorate)">Graduate degree (Masters or Doctorate)</option>
+    </select>
+    <br>
+    <label for="occupation">occupation</label>
+    <select name="occupation" id="occupation">
+      <option value="Architecture & Engineering">Architecture & Engineering</option>
+      <option value="Arts Design Entertainment Sports & Media">Arts Design Entertainment Sports & Media</option>
+      <option value="Building & Grounds Cleaning & Maintenance">Building & Grounds Cleaning & Maintenance</option>
+      <option value="Business & Financial">Business & Financial</option>
+      <option value="Community & Social Services">Community & Social Services</option>
+      <option value="Computer & Mathematical">Computer & Mathematical</option>
+      <option value="Construction & Extraction">Construction & Extraction</option>
+      <option value="Education&Training&Library">Education&Training&Library</option>
+      <option value="Farming Fishing & Forestry">Farming Fishing & Forestry</option>
+      <option value="Food Preparation & Serving Related">Food Preparation & Serving Related</option>
+      <option value="Healthcare Practitioners & Technical">Healthcare Practitioners & Technical</option>
+      <option value="Healthcare Support">Healthcare Support</option>
+      <option value="Installation Maintenance & Repair">Installation Maintenance & Repair</option>
+      <option value="Legal">Legal</option>
+      <option value="Life Physical Social Science">Life Physical Social Science</option>
+      <option value="Management">Management</option>
+      <option value="Office & Administrative Support">Office & Administrative Support</option>
+      <option value="Personal Care & Service">Personal Care & Service</option>
+      <option value="Production Occupations">Production Occupations</option>
+      <option value="Protective Service">Protective Service</option>
+      <option value="Retired">Retired</option>
+      <option value="Sales & Related">Sales & Related</option>
+      <option value="Student">Student</option>
+      <option value="Transportation & Material Moving">Transportation & Material Moving</option>
+      <option value="Unemployed">Unemployed</option>
+    </select>
+    <br>
+    <label for="income">income</label>
+    <select name="income" id="income">
+      <option value="Less than $12500">Less than $12500</option>
+      <option value="$12500 - $24999">$12500 - $24999</option>
+      <option value="$25000 - $37499">$25000 - $37499</option>
+      <option value="$37500 - $49999">$37500 - $49999</option>
+      <option value="$50000 - $62499">$50000 - $62499</option>
+      <option value="$62500 - $74999">$62500 - $74999</option>
+      <option value="$75000 - $87499">$75000 - $87499</option>
+      <option value="$87500 - $99999">$87500 - $99999</option>
+      <option value="$100000 or More">$100000 or More</option>
+    </select>
+    <br>
+    <label for="Bar">Bar</label>
+    <select name="Bar" id="Bar">
+      <option value="gt8">gt8</option>
+      <option value="4~8">4~8</option>
+      <option value="1~3">1~3</option>
+      <option value="less1">less1</option>
+      <option value="never" selected>never</option> 
+    </select>
+    <br>
+    <label for="CoffeeHouse">CoffeeHouse</label>
+    <select name="CoffeeHouse" id="CoffeeHouse">
+      <option value="gt8">gt8</option>
+      <option value="4~8">4~8</option>
+      <option value="1~3">1~3</option>
+      <option value="less1" selected>less1</option>
+      <option value="never">never</option>
+    </select>
+    <br>
+    <label for="CarryAway">CarryAway</label>
+    <select name="CarryAway" id="CarryAway">
+     <option value="gt8">gt8</option>
+      <option value="4~8">4~8</option>
+      <option value="1~3" selected>1~3</option>
+      <option value="less1">less1</option>
+      <option value="never">never</option>
+    </select>
+    <br>
+    <label for="RestaurantLessThan20">RestaurantLessThan20</label>
+    <select name="RestaurantLessThan20" id="RestaurantLessThan20">
+      <option value="gt8">gt8</option>
+      <option value="4~8">4~8</option>
+      <option value="1~3" selected>1~3</option>
+      <option value="less1">less1</option>
+      <option value="never">never</option>
+    </select>
+    <br>
+    <label for="Restaurant20To50">Restaurant20To50</label>
+    <select name="Restaurant20To50" id="Restaurant20To50">
+      <option value="gt8">gt8</option>
+      <option value="4~8">4~8</option>
+      <option value="1~3">1~3</option>
+      <option value="less1" selected>less1</option>
+      <option value="never">never</option>
+    </select>
+    <br>
+    <label for="toCoupon_GEQ15min">toCoupon_GEQ15min</label>
+    <select name="toCoupon_GEQ15min" id="toCoupon_GEQ15min">
+      <option value=0>0</option>
+      <option value=1>1</option>
+    </select>
+    <br>
+    <label for="toCoupon_GEQ25min">toCoupon_GEQ25min</label>
+    <select name="toCoupon_GEQ25min" id="toCoupon_GEQ25min">
+      <option value=0>0</option>
+      <option value=1>1</option>
+    </select>
+    <br>
+    <label for="direction_same">direction_same</label>
+    <select name="direction_same" id="direction_same">
+      <option value=0>0</option>
+      <option value=1>1</option>
+    </select>
+    <br><br>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body></html>

@@ -1,0 +1,23 @@
+,frequent_values
+destination,No Urgent Place
+passanger,Alone
+weather,Sunny
+temperature,80
+time,6PM
+coupon,Coffee House
+expiration,1d
+gender,Female
+age,21
+maritalStatus,Married partner
+has_children,0
+education,Some college - no degree
+occupation,Unemployed
+income,$25000 - $37499
+Bar,never
+CoffeeHouse,less1
+CarryAway,1~3
+RestaurantLessThan20,1~3
+Restaurant20To50,less1
+toCoupon_GEQ15min,1
+toCoupon_GEQ25min,0
+direction_same,0
